@@ -19,4 +19,4 @@
 * 负载均衡策略及 MD5 实现位于 `utils.cpp`
 
 #### TODO
-- [ ] 文件树优化：使用 unordered_map 和子结点指针数组优化查找
+- [x] 文件树优化：使用 unordered_map 和子结点指针数组优化查找
