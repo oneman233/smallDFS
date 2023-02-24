@@ -17,3 +17,6 @@
 * 文件树储存 parent 和 next sibling 指针，查询时采取层序遍历
 * 通过条件变量将 dataserver 挂起等待，再通过 finish 指针告知 nameserver 任务执行情况
 * 负载均衡策略及 MD5 实现位于 `utils.cpp`
+
+#### TODO
+- [ ] 文件树优化：使用 unordered_map 和子结点指针数组优化查找
