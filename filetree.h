@@ -10,19 +10,29 @@
 #include <iostream>
 #include <cmath>
 #include <utility>
+#include <random>
 #include "utils.h"
 
 struct TreeNode {
+    bool isUploaded;
     std::string value;
     bool isFile;
     TreeNode *parent, *firstSon, *nextSibling;
+    std::vector<TreeNode *> sons;
+    std::unordered_map<std::string, int> sonIdx;
 
     TreeNode(std::string _value, const bool _isFile)
             : value(std::move(_value)),
               isFile(_isFile),
               parent(nullptr),
               firstSon(nullptr),
-              nextSibling(nullptr) {}
+              nextSibling(nullptr) {
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        std::uniform_int_distribution<int> dist(1,10);
+        // 随机提升节点
+        isUploaded = (dist(mt) % 2 == 0);
+    }
 };
 
 class FileTree {
